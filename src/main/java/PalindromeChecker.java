@@ -34,24 +34,39 @@ public class PalindromeChecker {
       }
     }
   }
-  public boolean palindrome(String word)
+  public boolean palindrome(String word) //check if is palindrome
   {
-    //String backwards = reverse(word);
-    if (word.equals(reverse(word)))
-      return true;
-    else
-      return false;
+    String every = onlyLetters(noCapitals(noSpaces(word)));
+    String backwards = reverse(every);
+    return every.equals(backwards);
   }
-  public String reverse(String str)
+  public String reverse(String word) //make reverse
   {
     String sNew = new String();
-    //String s = "";
-
-    for (int i = str.length()-1; i >= 0; i--)
-      sNew = sNew + str.charAt (i);
+    for (int i = word.length()-1; i >= 0; i--)
+      sNew = sNew + word.charAt (i);
 
     return sNew;
+  }
+  public String noCapitals(String sWord) { //return string with all lowercase
+    return sWord.toLowerCase();
+  }
+  public String noSpaces(String sWord) { //return string with no spaces
+    String s = "";
+    for (int i = 0; i < sWord.length(); i++)
+      if (!sWord.substring (i, i+1).equals (" "))
+        s = s + sWord.charAt(i);
+
+    return s;
+  }
+  public String onlyLetters(String word) { //return only letters
+    String s = "";
+    for (int i = 0; i < word.length(); i++)
+      if (Character.isLetter(word.charAt(i)))
+        s = s + word.charAt(i);
+    return s;
+  }
 }
-}
+
 
 
