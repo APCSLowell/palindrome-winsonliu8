@@ -34,14 +34,14 @@ public class PalindromeChecker {
       }
     }
   }
-  public boolean palindrome(String word)
-  {
-    String backwards = reverse(word);
-    if (word.equals(reverse(word)))
-      return true;
-    else
-      return false;
-  }
+  //public boolean palindrome(String word)
+  //{
+  //  String backwards = reverse(word);
+  //  if (word.equals(reverse(word)))
+  //    return true;
+  //  else
+  //    return false;
+  //}
   public String reverse(String str)
   {
     String sNew = new String();
@@ -52,4 +52,13 @@ public class PalindromeChecker {
 
     return sNew;
   }
+   public boolean palindrome(String word)
+  {
+    String backwards = reverse(word);
+    if (word.equals(reverse(word)))
+      return true;
+    else
+      return false;
+  }
 }
+
